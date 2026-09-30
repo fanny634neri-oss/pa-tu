@@ -1369,26 +1369,34 @@ document.addEventListener('keydown',function(event){
     }
 
 });
-    
-const photoModal = document.getElementById("photoModal");
-const bigPhoto = document.getElementById("bigPhoto");
-const closePhoto = document.querySelector(".close-photo");
 
-document.querySelectorAll(".photo img").forEach(function(photo) {
-    photo.addEventListener("click", function() {
-        bigPhoto.src = this.src;
-        photoModal.style.display = "flex";
+    document.addEventListener("DOMContentLoaded", function() {
+
+    const photoModal = document.getElementById("photoModal");
+    const bigPhoto = document.getElementById("bigPhoto");
+    const closePhoto = document.querySelector(".close-photo");
+
+    document.querySelectorAll(".photo img").forEach(function(photo) {
+
+        photo.addEventListener("click", function() {
+            bigPhoto.src = this.src;
+            photoModal.style.display = "flex";
+        });
+
     });
-});
 
-closePhoto.addEventListener("click", function() {
-    photoModal.style.display = "none";
-});
-
-photoModal.addEventListener("click", function(e) {
-    if (e.target === photoModal) {
+    closePhoto.addEventListener("click", function() {
         photoModal.style.display = "none";
-    }
+    });
+
+    photoModal.addEventListener("click", function(e) {
+
+        if (e.target === photoModal) {
+            photoModal.style.display = "none";
+        }
+
+    });
+
 });
     
 </script>
